@@ -1,6 +1,7 @@
 // src/server.js
 const express = require("express");
 const path = require("path");
+console.log("Looking for middleware in: ", path.resolve(__dirname, "middleware"));
 const errorMiddleware = require("./middleware/errorMiddleware");
 const inventoryRoute = require("./routes/inventoryRoute");
 const errorRoute = require("./routes/errorRoute");
