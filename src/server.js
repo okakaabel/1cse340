@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const errorHandler = require("./middleware/errorMiddleware");
+const errorMiddleware = require("./middleware/errorMiddleware");
 const inventoryRoute = require("./routes/inventoryRoute");
 const errorRoute = require("./routes/errorRoute");
 const { engine } = require("express-ejs-layouts");
@@ -20,7 +20,7 @@ app.use("/inv", inventoryRoute);
 app.use("/error", errorRoute);
 
 // Error Handling Middleware
-app.use(errorHandler);
+app.use(errorMiddleware);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
